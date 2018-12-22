@@ -1,0 +1,75 @@
+
+body {  
+    background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FA709A );
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 5500px;
+}
+
+.welcomeDiv {
+    margin: 1%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -90%);
+    background-color: rgba(255, 255, 255, 0.247);
+    box-shadow: 0px 0px 24px 9px rgba(0, 0, 0, 0.397);
+    text-align: center;
+}
+
+.welcomeDiv h1 {
+    text-decoration: underline;
+}
+
+.startButton:hover {
+    color: white;
+    background-color: black;
+}
+
+.timerDiv {
+    margin: 1%;
+    position: fixed;
+    width: 250px;
+    text-align: center;
+}
+
+.timer {
+    margin: 5%;
+}
+
+.timer p {
+    font-size: 5em;
+    margin: 0;
+}
+
+
+.gameDiv {
+    margin: 1%;
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    text-align: center;
+    width: 60%;   
+    padding-bottom: 1%; 
+}
+
+.gameTitle h1 {
+    font-size: 5em;
+    text-decoration: underline;
+}
+
+.questionDiv p {
+    font-size: 3em;
+}
+
+.answerDiv p {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.answerDiv p:hover {
+    outline: 2px solid blue;
+    background-color: rgba(185, 33, 255, 0.452);
+    color: white;
+}
