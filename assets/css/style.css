@@ -1,33 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
 
 body {  
-    background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FA709A );
+    /* background: linear-gradient(to bottom, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82,  #faa249, #f37055, #ef4e7b); */
+    background-image: url("../images/bg2.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 5500px;
+    /* position: fixed; */
+    height: 925px;
+    font-family: 'American Typewriter';
+
 }
 
-.welcomeDiv {
-    margin: 1%;
+
+/* WELCOME SCREEN CSS */
+
+#box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 390px;
+    height: 200px;
+    color: white;
+    font-size: 2.5rem;
     position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -90%);
-    background-color: rgba(255, 255, 255, 0.247);
+    /* left: 25%; */
+    /* top: 50%; */
+    transform: translate(100%, 100%); 
     box-shadow: 0px 0px 24px 9px rgba(0, 0, 0, 0.397);
+  }
+
+  .gradient-border {
+    --borderWidth: 3px;
+  }
+
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth));
+    width: calc(100% + var(--borderWidth));
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    /* border-radius: calc(2 * var(--borderWidth)); */
+    z-index: -1;
+    animation: animatedgradient 3s alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0%;
+      }
+      50% {
+          background-position: 100%;
+      }
+      100% {
+          background-position: 0%;
+      }
+  }
+  
+#box.gradient-border.animated.fadeIn.welcome p {
+    color: white;
+    font-family: 'Raleway';
+    font-size: 2.5rem;
+    margin: 0 auto;
+    transition: .5s ease;
     text-align: center;
+    text-shadow: 1px 1px 2px blue, 0 0 1em black, 0 0 0.2em purple;
 }
 
-.welcomeDiv h1 {
-    text-decoration: underline;
+.startButton {
+    transition: .5s ease;
+    position: relative;
+    margin: 0 auto 0 3px;
+    
 }
 
 .startButton:hover {
-    color: white;
-    background-color: black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 2px white;
 }
 
+
+
+/* TIMER CSS */
+
 .timerDiv {
-    margin: 1%;
+    margin: 1.3%;
     position: fixed;
     width: 250px;
     text-align: center;
@@ -35,41 +96,91 @@ body {
 
 .timer {
     margin: 5%;
+    margin-top: 1%;
+}
+
+.timerDiv h1 {
+    color: white;
+    font-size: 1.5em;
 }
 
 .timer p {
     font-size: 5em;
     margin: 0;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 1em rgba(255, 255, 255, 0.507), 0 0 0.2em rgba(255, 255, 255, 0.507);
 }
 
 
-.gameDiv {
-    margin: 1%;
+/* GAME TITLE CSS */
+
+.gameTitle {
     position: fixed;
-    left: 50%;
-    top: 20%;
-    transform: translate(-50%);
+	top: 3%;
+	left: 0;
+	right: 0;
     text-align: center;
-    width: 60%;   
-    padding-bottom: 1%; 
 }
 
 .gameTitle h1 {
+    font-family: 'American Typewriter';
+    width: 60%;
     font-size: 5em;
-    text-decoration: underline;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    /* background-color:rgba(255, 255, 255, 0.247); */
+    /* box-shadow: 0px 0px 10px 2px rgb(255, 255, 255); */
+
 }
 
+
+
+/* GAME DIV CSS */
+.gameDivContainer {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    text-align: center;
+    /* border: 2px solid yellow; */
+}
+    
+.gameDiv {
+    position: fixed;
+    left: 20%;
+    /* text-align: center; */
+    width: 60%;   
+    padding-bottom: 1%; 
+    /* border: 2px solid red; */
+
+}
+
+
 .questionDiv p {
+    font-size: 2em;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+
+}
+
+.hr {
+    color: white;
+}
+
+.answerDiv h3 {
+    width: 80%;
+    margin: 10px auto;
+    color: white;
+    text-shadow: 1px 1px 5px black;
     font-size: 3em;
 }
 
-.answerDiv p {
-    width: 80%;
-    margin: 10px auto;
+.answerDiv h3:hover {
+    outline: 2px solid white;
+    background-color: rgba(185, 33, 255, 0.452);
+    /* color: white; */
 }
 
-.answerDiv p:hover {
-    outline: 2px solid blue;
-    background-color: rgba(185, 33, 255, 0.452);
-    color: white;
-}
+
+  
+  

@@ -11,26 +11,29 @@
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-    <!-- mini.css -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <!-- bulma.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css.map"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
-    
-    <!-- div to hold the welcome screen content -->
-    <div class="welcomeDiv">
 
-        <h1>Trivia Game</h1>
-        <p>You have 10 seconds to answer each question!</p>
-        <h5>(Unanswered questions will count as incorrect)</h5>
-        <button class="startButton" >Start</button>
+    <div class="container">
+        <!-- will hold all trivia game content -->
 
-    </div>
+        <div class="gradient-border animated fadeIn welcome" id="box">
+            <p>Pixar Trivia</p>
+            <button class="button startButton">Begin →</button>
+        </div>
+
+    </div> <!-- end class="container" -->
 
 
     <!-- div to hold the timer content -->
@@ -39,38 +42,42 @@
 
     </div> <!-- end timerDiv -->
 
+    <!-- div to hold the game title -->
+    <div class="gameTitle">
+
+
+    </div> <!-- end gameTitle -->
+
+  
+
+
 
     <!-- div to hold the game content-->
-    <div class="gameDiv">
+    <div class="gameDivContainer">
 
-        <!-- div to hold the game title -->
-        <div class="gameTitle">
-
-            <!-- <h1>Trivia Game</h1> -->
-
-        </div> <!-- end gameTitle -->
-
-
-        <!-- div for the questions -->
-        <div class="questionDiv">
-
-            <!-- <p>Question</p> -->
-
-        </div> <!-- end questionDiv -->
-
-        <!-- div to hold the answers -->
-        <div class="answerDiv">
-
-            <!-- <p>A1.</p>
-            <p>A2.</p>
-            <p>A3.</p>
-            <p>A4.</p> -->
-
-        </div> <!-- end answerDiv -->
-
-
+        <div class="gameDiv">
+    
+    
+            <!-- div for the questions -->
+            <div class="questionDiv">
+    
+    
+    
+            </div> <!-- end questionDiv -->
+    
+            <!-- div to hold the answers -->
+            <div class="answerDiv">
+    
+    
+    
+            </div> <!-- end answerDiv -->
+    
+        </div>
 
     </div>
+
+
+
 
     <!-- link to js file -->
     <script src="./assets/js/app.js"></script>

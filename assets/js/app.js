@@ -3,20 +3,25 @@ var timerCounter;
 var numCorrect;
 var numIncorrect;
 var question; // variable to determine which question is being displayed
-var questionsArray = ["Q1. The sky is...",
-    "Q2. My favorite show is...",
-    "Q3. Best Impractical Joker",
-    "Q4. Best Celebrity Chef",
-    "Q5. # of Boys Kissed"
+var questionsArray = ["Q1. What is the name of Sid's dog in Toy Story?",
+    "Q2. What kind of whale takes Dory and Marlin to Sidney in Finding Nemo?",
+    "Q3. Which member of the Incredibles family can turn invisible?",
+    "Q4. What year does Walle bring humans back to Earth?",
+    "Q5. What clan does Merida from Brave belong to?"
 ];
 var answersArray = [
-    ["Blue", "Red", "Green", "Yellow"],
-    ["Criminal Minds", "Survivor", "Bobs Burgers", "Hells Kitchen"],
-    ["Sal", "Q", "Joe", "Murr"],
-    ["Gordon Ramsay", "Jamie Oliver", "Wolfgang Puck", "Guy Fieri"],
-    ["1", "3", "6", "8"]
+    ["Bruiser", "Scud", "Spike", "Max"],
+    ["Killer", "Blue", "Beluga", "Humpback"],
+    ["Bob", "Helen", "Violet", "Dash"],
+    ["5523", "4218", "3381", "2805"],
+    ["Dunbroch", "Anstruther", "Galbraith", "Rutherford"]
 ];
-var correctAnswers = ["Blue", "Bobs Burgers", "Sal", "Gordon Ramsay", "6"];
+var correctAnswers = ["Scud", "Blue", "Violet", "2805", "Dunbroch"];
+
+
+
+
+
 
 
 // on click function that generates the timer and game content
@@ -31,15 +36,22 @@ $(".startButton").on("click", setUpGame);
 function setUpGame() {
 
     // clear the welcomeDiv
-    $(".welcomeDiv").css("box-shadow", "0px 0px 0px 0px rgba(0, 0, 0, 0)");
-    $(".welcomeDiv").empty();
+    // $(".welcomeDiv").css("box-shadow", "0px 0px 0px 0px rgba(0, 0, 0, 0)");
+    // $(".welcomeDiv").empty();
+
+    // remove classes and content from welcome card
+    $(".gradient-border").empty();
+    $(".gradient-border").attr("id", "empty");
+    $(".gradient-border").removeClass("gradient-border");
+
+    
 
     $(".gameTitle").empty();
     $(".questionDiv").empty();
     $(".answerDiv").empty();
 
 
-
+    // set initial variables
     numCorrect = 0;
     numIncorrect = 0;
     question = 0;
@@ -78,14 +90,14 @@ function setUpTimer() {
     var timerTitle = $("<h1>");
     timerTitle.text("Remaining Time");
     $(".timerDiv").prepend(timerTitle);
-    $(".timerDiv").css("background-color", "rgba(255, 255, 255, 0.247)");
-    $(".timerDiv").css("box-shadow", "0px 0px 24px 9px rgba(0, 0, 0, 0.397");
-
+    $(".timerDiv").css("box-shadow", "0px 0px 10px 2px rgb(255, 255, 255)");
+    
     // generate the counter
     var counter = $("<p>");
     counter.text("10");
     counter.addClass("counter")
     $(".timer").append(counter);
+    $(".timer").css("background-color", "rgba(255, 255, 255, 0.147)");
     $(".timer").css("border", "1px solid white");
 };
 
@@ -120,11 +132,11 @@ function updateTimer() {
 
 function setUpGameDiv() {
 
-    $(".gameDiv").css("background-color", "rgba(255, 255, 255, 0.247)");
-    $(".gameDiv").css("box-shadow", "0px 0px 24px 9px rgba(0, 0, 0, 0.397");
+    // $(".gameDiv").css("background-color", "rgba(255, 255, 255, 0.247)");
+    $(".gameDiv").css("box-shadow", "0px 0px 10px 2px rgb(255, 255, 255");
 
     var gameH = $("<h1>");
-    gameH.text("Trivia Game");
+    gameH.text("⤛ Pixar Trivia ⤜");
     $(".gameTitle").append(gameH);
 
     // call a function to display the questions depending on the question variable
@@ -160,7 +172,7 @@ function displayQuestion(questionNum) {
 
         var playAgain = $("<button>");
         playAgain.text("Play Again");
-        playAgain.addClass("startButton");
+        playAgain.addClass("button startButton");
 
         $(".questionDiv").append( end, scoreCor, scoreInc, playAgain);
 
@@ -168,8 +180,6 @@ function displayQuestion(questionNum) {
             $(".questionDiv").empty();
             setUpGame();
         });
-
-        // have a button that will run the 
 
     }
 
@@ -196,9 +206,13 @@ function displayQuestion(questionNum) {
 function displayAnswers(questionNum) {
 
     $(".answerDiv").empty();
+    var hr = $("<p>");
+    hr.addClass("hr");
+    hr.text("_____________________________________________________________");
+    $(".answerDiv").append(hr);
 
     for (var i = 0; i < 4; i++) {
-        var p = $("<p>");
+        var p = $("<h3>");
         p.text(answersArray[questionNum][i]);
         p.addClass("answerP");
         p.attr("data-answer", answersArray[questionNum][i]);
@@ -209,7 +223,7 @@ function displayAnswers(questionNum) {
 
 
 
-// on click function that generates the timer and game content
+// on click function
 $(document).on("click", ".answerP", getAnswer);
 
 
